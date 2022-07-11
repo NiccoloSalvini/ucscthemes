@@ -1,0 +1,41 @@
+---
+title: "Untitled"
+description: |
+  A new article created using the ucsc Distill format.
+author:
+  - name: Niccolò Salvini
+    url: https://niccolosalvini.me
+    affiliation: ALTEMS, Catholi University of Sacred Hearts
+    affiliation_url: https://cattolica.it
+date: "`r Sys.Date()`"
+output: 
+  distill::distill_article:
+    theme: theme/ucsc-distill.css
+    toc: true
+    highlight: theme/ucsc_highlight.theme
+    highlight_downlit: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+Distill is a publication format for scientific and technical writing, native to the web. 
+
+Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+
+
+## Embed code
+```{r}
+plot(mtcars$mpg)
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(mtcars, aes(mpg)) + 
+  geom_bar()
+
+```
+

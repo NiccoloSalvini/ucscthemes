@@ -1,0 +1,4 @@
+name: UCSC Presentation template
+description: >
+   Standard xaringan UCSC template for presentations
+create_dir: TRUE

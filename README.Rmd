@@ -75,10 +75,12 @@ The ggplot branding is applied through themes and scales.
 library(ucscthemes)
 library(ggplot2)
 
+## issue with font theme
+
 ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
   geom_point(size = 5) +
   scale_colour_ucsc(discrete = FALSE) +
-  theme_ucsc() +
+  # theme_ucsc() +
   labs(title = "The fonts and colours are ucsc specific",
        subtitle = "and can provide coherent plot branding")
 

@@ -4,59 +4,84 @@
 # ucscthemes
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ucscthemes)](https://CRAN.R-project.org/package=ucscthemes)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of ucscthemes is to …
+The goal of ucscthemes is to provide branded templates for the
+University of Oslo for commonly used R markdown packages. Currently the
+package contains:
+
+-   Presentation template for the
+    [xaringan](https://slides.yihui.org/xaringan/#1)-package  
+-   Tutorial template for the
+    [learnr](https://rstudio.github.io/learnr/)-package  
+-   Website template for the
+    [distill](https://rstudio.github.io/distill/website.html)-package  
+-   Article template for the
+    [distill](https://rstudio.github.io/distill/basics.html)-package  
+-   Themes for the [ggplot2](https://ggplot2.tidyverse.org/)-package  
+-   Colour and fill scales for the
+    [ggplot2](https://ggplot2.tidyverse.org/)-package
 
 ## Installation
 
-You can install the development version of ucscthemes from
-[GitHub](https://github.com/) with:
+You can install ucscthemes from github
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("NiccoloSalvini/ucscthemes")
+# install.packages("remotes")
+remotes::install_github("NiccoloSalvini/ucscthemes")
 ```
 
-## Example
+<!-- You can install the released version of ucscthemes from [CRAN](https://CRAN.R-project.org) with: -->
+<!-- ``` r -->
+<!-- install.packages("ucscthemes") -->
+<!-- ``` -->
 
-This is a basic example which shows you how to solve a common problem:
+## Basic use
+
+xaringan presentation, learnr tutorial and distill article templates
+with ucsc branding can be access easily using the RStudio IDE, by
+selecting `File` -\> `R markdown ...` -\> `From Template`.
+
+Distill website template can be access most easily through the RStudio
+IDE to create a new project. `File` -\> `New project...` -\>
+`New Directory` -\> `ucsc Distill Website`
+
+**Previews**
+
+<div style="text-align: center;">
+
+</div>
+
+### ggplot2 branding
+
+The ggplot branding is applied through themes and scales.
 
 ``` r
 library(ucscthemes)
-## basic example code
+library(ggplot2)
+
+## issue with font theme
+
+ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
+  geom_point(size = 5) +
+  scale_colour_ucsc(discrete = FALSE) +
+  # theme_ucsc() +
+  labs(title = "The fonts and colours are ucsc specific",
+       subtitle = "and can provide coherent plot branding")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+# ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
+#   geom_point(size = 5) +
+#   scale_colour_ucsc(palette = "blue", discrete = FALSE) +
+#   theme_ucsc_dark() +
+#   labs(title = "The fonts and colours are ucsc specific",
+#        subtitle = "and can provide coherent plot branding")
 ```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
-
-## Code of Conduct
-
-Please note that the ucscthemes project is released with a [Contributor
-Code of
-Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.

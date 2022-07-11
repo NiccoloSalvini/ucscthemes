@@ -11,4 +11,6 @@ RoxygenNote: 7.2.0
 Imports: 
     distill,
     ggplot2,
-    grDevices
+    grDevices,
+    learnr,
+    xaringan
