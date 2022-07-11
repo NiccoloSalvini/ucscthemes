@@ -1,4 +1,4 @@
-# ucscthemes (development version)
+# ucscthemes 1.0.0
 
 # ucscthemes 0.0.0.9000
 

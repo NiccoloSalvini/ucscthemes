@@ -1,6 +1,6 @@
 Package: ucscthemes
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9001
+Version: 1.0.0
 Authors@R: 
     person("Niccolò", "Salvini", , "niccolo.salvini27@gmail.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
@@ -8,3 +8,7 @@ License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
+Imports: 
+    distill,
+    ggplot2,
+    grDevices
