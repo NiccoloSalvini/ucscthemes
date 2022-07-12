@@ -1,2 +1,4 @@
-repo:
-  branch: main
+url: ~
+template:
+  bootstrap: 5
+
