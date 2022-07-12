@@ -6,9 +6,9 @@
 \alias{scale_fill_ucsc}
 \title{Colour and fill scale constructors for ucsc colors}
 \usage{
-scale_colour_ucsc(palette = "redblack", discrete = TRUE, reverse = FALSE, ...)
+scale_colour_ucsc(palette = "bluewhite", discrete = TRUE, reverse = FALSE, ...)
 
-scale_color_ucsc(palette = "redblack", discrete = TRUE, reverse = FALSE, ...)
+scale_color_ucsc(palette = "bluewhite", discrete = TRUE, reverse = FALSE, ...)
 
 scale_fill_ucsc(palette = "redblack", discrete = TRUE, reverse = FALSE, ...)
 }

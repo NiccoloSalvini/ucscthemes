@@ -38,9 +38,9 @@
 #'    geom_point(size = 5) +
 #'    theme_ucsc_dark_void()
 #'}
-theme_ucsc <- function (base_size = 10) {
+theme_ucsc <- function (base_size = 11.5) {
   theme_grey(base_size = base_size,
-             base_family = ucsc_font("std")) %+replace%
+             base_family = "Roboto") %+replace%
     theme(
       line = ucsc_line(ucsc_cols("grey1")),
       text = ucsc_text(ucsc_cols("blue")),
@@ -55,6 +55,8 @@ theme_ucsc <- function (base_size = 10) {
                                fonttype = "title",
                                face = "italic", vjust = 1, hjust = 0),
       plot.title = element_text(family = ucsc_font("title"),
+                                margin = margin(b = 10),
+                                face = "bold",
                                 size = 15,
                                 hjust = 0),
 
@@ -180,6 +182,30 @@ import_roboto<- function() {
 
 }
 
+
+#' Import inter font for use in charts
+#'
+#' inter is a trademark of Google.
+#'
+#' There is an option `hrbrthemes.loadfonts` which -- if set to `TRUE` -- will
+#' call `extrafont::loadfonts()` to register non-core fonts with R PDF & PostScript
+#' devices. If you are running under Windows, the package calls the same function
+#' to register non-core fonts with the Windows graphics device.
+#'
+#' @md
+#' @note This will take care of ensuring PDF/PostScript usage. The location of the
+#'   font directory is displayed after the base import is complete. It is highly
+#'   recommended that you install them on your system the same way you would any
+#'   other font you wish to use in other programs.
+#' @export
+import_inter<- function() {
+
+  inter_font_dir <- system.file("fonts", "inter", package="ucscthemes")
+
+}
+
+
+
 #' ucsc theme fonts
 #'
 #' Returns family name of ucsc fonts, to
@@ -189,40 +215,34 @@ import_roboto<- function() {
 #' @param type body or title font type
 #'
 #' @export
-ucsc_font <- function(type = c("std", "body", "title") ){
+ucsc_font <- function(type = c("body", "title") ){
 
   type <- match.arg(type,
-                    c("std", "body", "title"))
+                    c("body", "title"))
 
   switch(type,
-         "std" = "Roboto",
-         "body" = font_r_regular,
-         "title" = font_r_bold)
+         "body" = font_inter,
+         "title" = font_robo)
 
 }
 
-#' @rdname RobotoBold
+
+## diff fonts NA
+#' @rdname Roboto
 #' @md
-#' @note `font_r_bold` (a.k.a. "`Roboto Bold`") is not available on
+#' @note `font_rob` (a.k.a. "`Roboto`") is not available on
 #'     Windows and will throw a warning if used in plots.
-#' @description `font_r_bold` == "`Roboto Bold`"
+#' @description `font_robo_` == "`Roboto `"
 #' @export
-font_r_bold <- "Roboto Bold"
+font_robo <- "Roboto"
 
 
-#' @rdname RobotoRegular
+#' @rdname Inter
 #' @md
-#' @note `font_r_regular` (a.k.a. "`Roboto Regular`") is not available on
+#' @note `font_intr` (a.k.a. "`Inter`") is not available on
 #'     Windows and will throw a warning if used in plots.
-#' @description `font_r_regular` == "`Roboto Regular`"
+#' @description `font_intr` == "`Inter`"
 #' @export
-font_r_regular <- "Roboto Regular"
+font_inter <- "Inter"
 
 
-#' @rdname RobotoThin
-#' @md
-#' @note `font_r_thin` (a.k.a. "`Roboto Thin`") is not available on
-#'     Windows and will throw a warning if used in plots.
-#' @description `font_r_Thin` == "`Roboto Thin`"
-#' @export
-font_r_thin <- "Roboto Thin"

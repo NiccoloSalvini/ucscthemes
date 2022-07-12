@@ -70,18 +70,22 @@ library(ggplot2)
 ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
   geom_point(size = 5) +
   scale_colour_ucsc(discrete = FALSE) +
-  # theme_ucsc() +
   labs(title = "The fonts and colours are ucsc specific",
-       subtitle = "and can provide coherent plot branding")
+       subtitle = "and can provide coherent plot branding")+
+  theme_ucsc()
 ```
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ``` r
-# ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
-#   geom_point(size = 5) +
-#   scale_colour_ucsc(palette = "blue", discrete = FALSE) +
-#   theme_ucsc_dark() +
-#   labs(title = "The fonts and colours are ucsc specific",
-#        subtitle = "and can provide coherent plot branding")
+  
+
+ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
+  geom_point(size = 5) +
+  scale_colour_ucsc(palette = "bw", discrete = FALSE) +
+  theme_ucsc_dark() +
+  labs(title = "The fonts and colours are ucsc specific",
+       subtitle = "and can provide coherent plot branding")
 ```
+
+<img src="man/figures/README-unnamed-chunk-6-2.png" width="100%" />

@@ -7,7 +7,7 @@
 \alias{theme_ucsc_dark_void}
 \title{ggplot themes for ucsc}
 \usage{
-theme_ucsc(base_size = 10)
+theme_ucsc(base_size = 11.5)
 
 theme_ucsc_dark(base_size = 10)
 
