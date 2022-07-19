@@ -2,19 +2,22 @@
 /* main elements */
 /*****************/
 
-/*****TODO change fonts and cols******/
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+@import url('https://fonts.googleapis.com/css2?family=Raleway');
+
+/***** fonts and cols******/
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 14;
 }
 
 h1, h2, h3{
-  font-family: Georgia, Serif;
+  font-family: Raleway, sans-serif;
   padding: .5em;
 }
 
 h1, h2 {
-  background-color: #000;
+  background-color: #01325c;
   color: #fff;
 }
 
@@ -26,24 +29,24 @@ h1, h2 {
 }
 
 .topicsHeader {
-  background-color: #000;
+  background-color: #01325c;
   color: #fff;
   padding: .5em;
 }
 
 .topicsList #doc-metadata {
-  background-color: #333;
+  background-color: #365b79;
   color: #fff;
   padding: .5em;
 }
 
 .topicsList .topic.current {
-  background-color: #666;
+  background-color: #365b79;
   color: #fff;
 }
 
 .topicsList .topic:hover, .topicsList .topic:active {
-  background-color: #f32;
+  background-color: #0167ad;
   color: #fff;
 }
 

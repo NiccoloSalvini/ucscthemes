@@ -1,4 +1,6 @@
-
+/*-- fonts --*/
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+@import url('https://fonts.googleapis.com/css2?family=Raleway');
 
 html {
   /*-- Main font sizes --*/
@@ -8,16 +10,16 @@ html {
   --aside-size:      12px;
   --fig-cap-size:    13px;
   /*-- Main font colors --*/
-  --title-color:     #000000;
-  --header-color:    rgba(0, 0, 0, 0.8);
+  --title-color:     #01325c;
+  --header-color:    rgba(0, 54, 91, 121);
   --body-color:      rgba(0, 0, 0, 0.8);
   --aside-color:     rgba(0, 0, 0, 0.6);
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
   /*-- Specify custom fonts ~~~ must be imported above TODO integrate custom Roboto Fonts   --*/
-  --heading-font:    Georgia, Serif;
-  --mono-font:       Georgia, Serif;
-  --body-font:       Arial, Helvetica, sans-serif;
-  --navbar-font:     Georgia, Serif;  /* websites + blogs only */
+  --heading-font:    Raleway, sans-serif;
+  --mono-font:       Raleway, sans-serif;
+  --body-font:       Inter, sans-serif;
+  --navbar-font:     Inter, sans-serif;  /* websites + blogs only */
 }
 
 /*-- ARTICLE METADATA --*/
@@ -66,3 +68,5 @@ ul > li::marker {
   font-size: 1.125em;
   color: #ff0000;
 }
+
+

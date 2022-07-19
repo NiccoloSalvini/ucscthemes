@@ -3,10 +3,12 @@ title: "Untitled"
 description: |
   A new article created using the ucsc Distill format.
 author:
-  - name: Niccolò Salvini
+  - fist_name: Niccolò
+    last_name: Salvini
     url: https://niccolosalvini.me
-    affiliation: ALTEMS, Catholi University of Sacred Hearts
+    affiliation: ALTEMS, Catholic University of Sacred Hearts
     affiliation_url: https://cattolica.it
+    orcid_id: 0000-0003-0645-5666
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:
@@ -20,22 +22,127 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Introduction
-Distill is a publication format for scientific and technical writing, native to the web. 
+# Introduzione
+Distill è un tipo do formato di pubblicazione per documenti scientifici e/o tecnici nativo web.
 
-Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+Impara qualcosa di più su Distill per R Markdown su <https://rstudio.github.io/distill>.
+
+Quello che trovi qui è un template riafdattato da Niccolò Salvini per pubblicazioni da Cattolica.
+
+Gli articoli in Distill includono le seguenti features:
+
+- Tipografia adatta ai lettori che si adatta bene ai dispositivi mobili.
+- Funzionalità essenziali per la scrittura tecnica come la matematica, le citazioni e le note a piè di pagina di LaTeX.
+- Opzioni flessibili di layout delle figure (ad es. visualizzazione di figure con una larghezza maggiore rispetto al testo dell'articolo).
+- Tabelle renderizzate in modo attraente con supporto opzionale per l'impaginazione.
+- Supporto per un'ampia varietà di strumenti per la creazione di diagrammi per l'illustrazione di concetti.
+- La possibilità di incorporare visualizzazioni interattive basate su JavaScript e D3.
+- Una varietà di modi per pubblicare articoli, incluso il supporto per la pubblicazione di set di articoli come sito Web Distill o blog Distill.
+
+## Scrivi un articolo 
+
+Quando utilizzi il comando RStudio **Knit** su un articolo Distill dal tema  all'interno di un sito Web, solo quell'articolo verrà visualizzato `render_site()`:
+
+Per creare un documento R Markdown che utilizza il formato Distill, installare prima il pacchetto `ucscthemes` in R direttamente da Github  `devtools::install_github("NiccoloSalvini/ucscthemes")`, tra poco su CRAN:
 
 
-## Embed code
-```{r}
-plot(mtcars$mpg)
-```
+.. immagine template ...
 
-```{r}
+e selezionare distill article.
+
+install.packages("distillare")
+Quindi, usa la finestra di dialogo New R Markdown all'interno di RStudio per creare un nuovo articolo Distill:
+
+# yaml options
+
+I nomi degli autori possono essere specificati utilizzando i campi nome e cognome espliciti o con un campo nome singolo. Le voci dell'autore devono avere almeno un nome e un URL specificati (i campi di affiliazione sono facoltativi). Specificare l'ID Orcid di un autore utilizzando il campo orcid_id.
+
+La descrizione dell'articolo e i sottotitoli dell'autore vengono visualizzati automaticamente come parte dell'area del titolo del documento.
+
+Il campo della data deve essere formattato come mese, giorno, anno o come anno, mese, giorno (sono supportate varie notazioni purché i componenti appaiano in uno di questi ordini).
+
+Il campo bibliografia viene utilizzato per fornire un riferimento al file Bibtex in cui sono definite tutte le fonti citate nel tuo articolo. La sezione citazioni descrive come includere riferimenti a queste fonti nel tuo articolo.
+
+
+# utilizzo
+
+..immagine anteprima..
+
+Quando utilizzi il comando RStudio **Knit** su un articolo Distill all'interno di un sito Web, solo quell'articolo verrà visualizzato e visualizzato in anteprima:
+
+Questo creerà solo l'articolo specificato (al contrario di tutti gli articoli nel sito). Questo è il nostro flusso di lavoro consigliato per la creazione di articoli poiché offre il tempo di consegna più rapido per le anteprime (poiché viene visualizzato solo l'articolo su cui stai lavorando).
+
+
+# Figure
+
+Distill fornisce una serie di opzioni per definire le cifre all'interno del tuo articolo. Per impostazione predefinita, le cifre coprono la larghezza del corpo dell'articolo principale:
+
+Tuttavia, alcune figure traggono vantaggio dall'utilizzo di uno spazio orizzontale aggiuntivo. In questi casi, l'opzione del blocco di layout consente di specificare un'ampia varietà di altri layout.
+
+Ad esempio, se volessimo visualizzare una figura un po' fuori dai limiti del testo dell'articolo, potremmo specificare il layout l-body-outset tramite l'opzione layout chunk:
+
+```{r, layout="l-body-outset", fig.width=6, fig.height=1.5}
 library(ggplot2)
-
-ggplot(mtcars, aes(mpg)) + 
-  geom_bar()
-
+ggplot(diamonds, aes(carat, price)) + geom_smooth() +
+  facet_grid(~ cut)
 ```
+
+Si noti che quando si specifica un layout alternativo è necessario specificare anche fig.width e fig.height per quel layout. Questi valori non determinano la dimensione assoluta della figura (che è dinamica in base al layout) ma determinano le proporzioni della figura.
+
+Vedere la documentazione sul layout delle figure per i dettagli sulle opzioni di layout aggiuntive.
+
+Gli esempi sopra si basano su grafici R convenzionali. Gli articoli Distill possono anche incorporare diagrammi e visualizzazioni interattive basate su JavaScript e D3.
+
+
+# le equazioni
+
+Le equazioni inline e di visualizzazione sono supportate tramite la sintassi MathJax markdown standard. Ad esempio, la seguente matematica LaTeX:
+
+
+>`$$
+>\sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^N (x_i -\mu)^2}
+>`$$
+
+
+che sarà renderizzata come:
+
+$$
+\sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^N (x_i -\mu)^2}
+$$
+
+
+<!-- # citazioni -->
+
+<!-- Bibtex è il modo supportato per fare citazioni accademiche. Per includere le citazioni, crea prima un file bibtex e fai riferimento ad esso dal campo bibliografia dell'argomento principale YAML (come illustrato sopra). -->
+
+<!-- Per esempio: -->
+
+<!-- >@Book{xie2015, -->
+<!--   title = {Dynamic Documents with R and knitr}, -->
+<!--   author = {Yihui Xie}, -->
+<!--   publisher = {Chapman and Hall/CRC}, -->
+<!--   address = {Boca Raton, Florida}, -->
+<!--   year = {2015}, -->
+<!--   edition = {2nd}, -->
+<!--   note = {ISBN 978-1498716963}, -->
+<!--   url = {http://yihui.name/knitr/}, -->
+<!-- } -->
+
+<!-- Le citazioni vengono quindi utilizzate nel corpo dell'articolo con la notazione R Markdown standard, ad esempio: [@xie2015] (che fa riferimento a un ID fornito nella bibliografia). Si noti che possono essere forniti più ID (separati da punto e virgola). -->
+
+<!-- La citazione è presentata in linea in questo modo: (Xie 2015). Se hai un'appendice, una bibliografia viene automaticamente creata e popolata in essa. -->
+
+<!-- Consulta l'articolo sulle citazioni per ulteriori dettagli sull'utilizzo delle citazioni, incluso come fornire i metadati necessari per rendere il tuo articolo più facilmente citabile per gli altri. -->
+
+<!-- # Note a piè di pagina e a parte -->
+
+<!-- Footnotes use standard Pandoc markdown notation, for example ^[This will become a hover-able footnote]. The number of the footnote will be automatically generated. 1 -->
+
+<!-- You can also optionally include notes in the gutter of the article (immediately to the right of the article text). To do this use the <aside> tag. -->
+
+<!-- ... -->
+
+
+
+
 
