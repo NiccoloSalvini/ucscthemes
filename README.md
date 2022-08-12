@@ -26,6 +26,8 @@ package contains:
 -   Themes for the [ggplot2](https://ggplot2.tidyverse.org/)-package  
 -   Colour and fill scales for the
     [ggplot2](https://ggplot2.tidyverse.org/)-package
+-   Course skeleton creation based on
+    [bs4](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html)
 
 ## Installation
 

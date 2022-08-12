@@ -88,13 +88,13 @@ class: red
 1. number two list
 
 ---
-class: black, middle
+class: blue, middle
 
 # a black slide with middle centering
 
 
 ---
-class: black
+class: blue
 
 # or even with a black slide!
 because black is cool, right?
