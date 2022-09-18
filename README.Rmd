@@ -1,79 +1,69 @@
----
-output: github_document
----
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
-
-# ucscthemes
+# ucscthemes <img src="man/figures/logo.png" align="right" height="139" />
 
 <!-- badges: start -->
-[![CRAN status](https://www.r-pkg.org/badges/version/ucscthemes)](https://CRAN.R-project.org/package=ucscthemes)
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ucscthemes)](https://CRAN.R-project.org/package=ucscthemes)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/NiccoloSalvini/ucscthemes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/NiccoloSalvini/ucscthemes/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of ucscthemes is to provide branded templates for the University of Oslo for commonly used R markdown packages. 
-Currently the package contains:
+The goal of ucscthemes is to provide branded templates for the
+University of Cattolica for commonly used R markdown packages. Currently the
+package contains:
 
-- Presentation template for the [xaringan](https://slides.yihui.org/xaringan/#1)-package    
-- Tutorial template for the [learnr](https://rstudio.github.io/learnr/)-package  
-- Website template for the [distill](https://rstudio.github.io/distill/website.html)-package   
-- Article template for the [distill](https://rstudio.github.io/distill/basics.html)-package   
-- Themes for the [ggplot2](https://ggplot2.tidyverse.org/)-package  
-- Colour and fill scales for the [ggplot2](https://ggplot2.tidyverse.org/)-package
-- Course skeleton creation based on [bs4](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html)
+-   Presentation template for the
+    [xaringan](https://slides.yihui.org/xaringan/#1)-package  
+-   Tutorial template for the
+    [learnr](https://rstudio.github.io/learnr/)-package  
+-   Website template for the
+    [distill](https://rstudio.github.io/distill/website.html)-package  
+-   Article template for the
+    [distill](https://rstudio.github.io/distill/basics.html)-package  
+-   Themes for the [ggplot2](https://ggplot2.tidyverse.org/)-package  
+-   Colour and fill scales for the
+    [ggplot2](https://ggplot2.tidyverse.org/)-package
+-   Course themed skeleton creation based on
+    [bs4](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html)
 
 ## Installation
+
 You can install ucscthemes from github
-```{r, eval = FALSE}
+
+``` r
 # install.packages("remotes")
 remotes::install_github("NiccoloSalvini/ucscthemes")
 ```
 
 <!-- You can install the released version of ucscthemes from [CRAN](https://CRAN.R-project.org) with: -->
-
 <!-- ``` r -->
 <!-- install.packages("ucscthemes") -->
 <!-- ``` -->
 
-## Basic use
+## Basic usage
 
-xaringan presentation, learnr tutorial and distill article templates with ucsc branding can be access easily using the RStudio IDE, by selecting `File` -> `R markdown ...` -> `From Template`.
+xaringan presentation, learnr tutorial and distill article templates
+with ucsc branding can be access easily using the RStudio IDE, by
+selecting `File` -\> `R markdown ...` -\> `From Template`.
 
-
-```{r, echo = FALSE, out.width="50%"}
-#knitr::include_graphics("man/figures/README-template.png")
-```
-
-Distill website template can be access most easily through the RStudio IDE to create a new project.
-`File` -> `New project...` -> `New Directory` -> `ucsc Distill Website`
-
-```{r, echo = FALSE, out.width="50%"}
-# knitr::include_graphics("man/figures/README-project.png")
-```
+Distill website template can be access most easily through the RStudio
+IDE to create a new project. `File` -\> `New project...` -\>
+`New Directory` -\> `ucsc Distill Website`
 
 **Previews**
 
 <div style="text-align: center;">
-```{r, echo = FALSE, out.width="50%", fig.cap=c("Distill article", "Xaringan presentation", "Learnr tutorial", "Distill website")}
-# knitr::include_graphics(list.files("man/figures/", "preview", full.names = TRUE))
-```
+
 </div>
 
 ### ggplot2 branding
 
 The ggplot branding is applied through themes and scales.
 
-```{r, fig.retina=3}
+``` r
 library(ucscthemes)
 library(ggplot2)
 
@@ -85,7 +75,11 @@ ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
   labs(title = "The fonts and colours are ucsc specific",
        subtitle = "and can provide coherent plot branding")+
   theme_ucsc()
+```
 
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
+``` r
   
 
 ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
@@ -94,5 +88,17 @@ ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
   theme_ucsc_dark() +
   labs(title = "The fonts and colours are ucsc specific",
        subtitle = "and can provide coherent plot branding")
-
 ```
+
+<img src="man/figures/README-unnamed-chunk-6-2.png" width="100%" />
+
+
+## ucsc course skeleton
+
+This package also offers a way to set up a minimal skeleton infrastructure to reproduce materials for a general course with [bs4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) and [Bookdown](https://bookdown.org/) ... [an example of a course written with this package](https://sbd-labs-22-23.netlify.app/).
+
+The function `create_course` generates this structure:
+
+
+
+

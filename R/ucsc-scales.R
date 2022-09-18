@@ -17,20 +17,20 @@
 #' library(ggplot2)
 #'
 #' ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
-#'    geom_point(size = 5) +
-#'    scale_colour_ucsc(discrete = FALSE)
+#'   geom_point(size = 5) +
+#'   scale_colour_ucsc(discrete = FALSE)
 #'
 #' ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
-#'    geom_point(size = 5) +
-#'    scale_colour_ucsc(discrete = FALSE, reverse = TRUE)
+#'   geom_point(size = 5) +
+#'   scale_colour_ucsc(discrete = FALSE, reverse = TRUE)
 #'
 #' ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
-#'    geom_point(size = 5) +
-#'    scale_colour_ucsc(discrete = FALSE)
+#'   geom_point(size = 5) +
+#'   scale_colour_ucsc(discrete = FALSE)
 #'
 #' ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
-#'    geom_point(size = 5) +
-#'    scale_colour_ucsc()
+#'   geom_point(size = 5) +
+#'   scale_colour_ucsc()
 scale_colour_ucsc <- function(palette = "bluewhite", discrete = TRUE, reverse = FALSE, ...) {
   pal <- ucsc_pal(palette = palette, reverse = reverse)
 

@@ -1,5 +1,5 @@
 ucsc_colors <- c(
-  blue  = "#003157",
+  blue = "#003157",
   white = "#fffeff",
   darkblue = "#01041d",
   grey1 = "#d7d2cb",
@@ -13,25 +13,23 @@ ucsc_colors <- c(
 ucsc_cols <- function(...) {
   cols <- c(...)
 
-  if (is.null(cols))
-    return (ucsc_colors)
+  if (is.null(cols)) {
+    return(ucsc_colors)
+  }
 
   cols <- match.arg(cols,
-                    names(ucsc_colors),
-                    several.ok = TRUE)
+    names(ucsc_colors),
+    several.ok = TRUE
+  )
 
   ucsc_colors[cols]
 }
 
 ucsc_palettes <- list(
-  `main`     = ucsc_cols("darkblue", "blue", "white"),
-
-  `bw`       = ucsc_cols("darkblue", "white"),
-
-  `greys`    = ucsc_cols("grey1", "grey5"),
-
+  `main` = ucsc_cols("darkblue", "blue", "white"),
+  `bw` = ucsc_cols("darkblue", "white"),
+  `greys` = ucsc_cols("grey1", "grey5"),
   `bluewhite` = ucsc_cols("blue", "white"),
-
   `blueblack` = ucsc_cols("blue", "darkblue")
 )
 

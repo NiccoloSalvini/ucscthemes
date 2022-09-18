@@ -23,45 +23,48 @@
 #' library(ggplot2)
 #'
 #' ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
-#'    geom_point(size = 5) +
-#'    theme_ucsc()
+#'   geom_point(size = 5) +
+#'   theme_ucsc()
 #'
 #' ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
-#'    geom_point(size = 5) +
-#'    theme_ucsc_dark()
+#'   geom_point(size = 5) +
+#'   theme_ucsc_dark()
 #'
 #' ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
-#'    geom_point(size = 5) +
-#'    theme_ucsc_void()
+#'   geom_point(size = 5) +
+#'   theme_ucsc_void()
 #'
 #' ggplot(mtcars, aes(mpg, disp, colour = factor(cyl))) +
-#'    geom_point(size = 5) +
-#'    theme_ucsc_dark_void()
-#'}
-theme_ucsc <- function (base_size = 11.5) {
-  theme_grey(base_size = base_size,
-             base_family = "Roboto") %+replace%
+#'   geom_point(size = 5) +
+#'   theme_ucsc_dark_void()
+#' }
+theme_ucsc <- function(base_size = 11.5) {
+  theme_grey(
+    base_size = base_size,
+    base_family = "Roboto"
+  ) %+replace%
     theme(
       line = ucsc_line(ucsc_cols("grey1")),
       text = ucsc_text(ucsc_cols("blue")),
       title = element_text(family = ucsc_font("title")),
-
-      panel.background  = ucsc_rect(),
+      panel.background = ucsc_rect(),
       panel.grid = ucsc_line("grey95"),
       panel.grid.minor = ucsc_line("grey95",
-                                  linetype = "longdash"),
+        linetype = "longdash"
+      ),
       plot.background = ucsc_rect(),
       plot.subtitle = ucsc_text(ucsc_cols("blue"),
-                               fonttype = "title",
-                               face = "italic", vjust = 1, hjust = 0),
-      plot.title = element_text(family = ucsc_font("title"),
-                                margin = margin(b = 10),
-                                face = "bold",
-                                size = 15,
-                                hjust = 0),
-
+        fonttype = "title",
+        face = "italic", vjust = 1, hjust = 0
+      ),
+      plot.title = element_text(
+        family = ucsc_font("title"),
+        margin = margin(b = 10),
+        face = "bold",
+        size = 15,
+        hjust = 0
+      ),
       axis.line = ucsc_line("grey60"),
-
       legend.background = ucsc_rect(),
       legend.key = ucsc_rect()
     )
@@ -70,18 +73,20 @@ theme_ucsc <- function (base_size = 11.5) {
 #' @export
 #' @importFrom ggplot2 theme '%+replace%'
 #' @rdname themes_ucsc
-theme_ucsc_dark <- function (base_size = 10) {
+theme_ucsc_dark <- function(base_size = 10) {
   theme_ucsc() %+replace%
     theme(
       line = ucsc_line(ucsc_cols("grey1")),
       text = ucsc_text(ucsc_cols("white")),
-      panel.background  = ucsc_rect(ucsc_cols("blue")),
+      panel.background = ucsc_rect(ucsc_cols("blue")),
       panel.grid = ucsc_line(ucsc_cols("grey5")),
       panel.grid.minor = ucsc_line(ucsc_cols("grey5"),
-                                  linetype = "longdash"),
+        linetype = "longdash"
+      ),
       plot.background = ucsc_rect(ucsc_cols("blue")),
       plot.subtitle = ucsc_text(ucsc_cols("grey1"),
-                               face = "italic", vjust = 1, hjust = 0),
+        face = "italic", vjust = 1, hjust = 0
+      ),
       axis.line = ucsc_line(ucsc_cols("white")),
       axis.text = ucsc_text(ucsc_cols("grey1")),
       legend.background = ucsc_rect(),
@@ -95,17 +100,17 @@ theme_ucsc_dark <- function (base_size = 10) {
 #' @importFrom ggplot2 theme element_blank '%+replace%'
 #' @rdname themes_ucsc
 
-theme_ucsc_void <- function (base_size = 10) {
+theme_ucsc_void <- function(base_size = 10) {
   theme_ucsc() %+replace%
     theme(
-      panel.background  =  element_blank(),
+      panel.background = element_blank(),
       panel.grid = element_blank(),
       panel.grid.minor = element_blank(),
       plot.background = element_blank(),
       axis.line = element_blank(),
       axis.text = element_blank(),
-      axis.title =  element_blank(),
-      axis.ticks =  element_blank()
+      axis.title = element_blank(),
+      axis.ticks = element_blank()
     )
 }
 
@@ -113,7 +118,7 @@ theme_ucsc_void <- function (base_size = 10) {
 #' @export
 #' @importFrom ggplot2 theme element_blank '%+replace%'
 #' @rdname themes_ucsc
-theme_ucsc_dark_void <- function (base_size = 10) {
+theme_ucsc_dark_void <- function(base_size = 10) {
   theme_ucsc_dark() %+replace%
     theme(
       panel.grid = element_blank(),
@@ -128,36 +133,39 @@ theme_ucsc_dark_void <- function (base_size = 10) {
 # elements ----
 #' @importFrom ggplot2 element_text margin
 ucsc_text <- function(colour = ucsc_cols("blue"),
-                     size = 10,
-                     lineheight = 0.9,
-                     hjust = 0.5,
-                     vjust = 0.5,
-                     angle = 0,
-                     face = "plain",
-                     fonttype = "body"){
-
-  element_text(family = ucsc_font(fonttype),
-               face = face,
-               colour =  colour,
-               hjust = hjust,
-               vjust = vjust,
-               angle = angle,
-               size = size,
-               lineheight = lineheight,
-               margin = margin(),
-               debug = FALSE)
+                      size = 10,
+                      lineheight = 0.9,
+                      hjust = 0.5,
+                      vjust = 0.5,
+                      angle = 0,
+                      face = "plain",
+                      fonttype = "body") {
+  element_text(
+    family = ucsc_font(fonttype),
+    face = face,
+    colour = colour,
+    hjust = hjust,
+    vjust = vjust,
+    angle = angle,
+    size = size,
+    lineheight = lineheight,
+    margin = margin(),
+    debug = FALSE
+  )
 }
 
 #' @importFrom ggplot2 element_line
-ucsc_line <- function(colour, linetype = "solid"){
-  element_line(colour = colour,
-               size = .6,
-               linetype =  linetype,
-               lineend = "round")
+ucsc_line <- function(colour, linetype = "solid") {
+  element_line(
+    colour = colour,
+    size = .6,
+    linetype = linetype,
+    lineend = "round"
+  )
 }
 
 #' @importFrom ggplot2 element_rect
-ucsc_rect <- function(fill = "transparent", colour = NA){
+ucsc_rect <- function(fill = "transparent", colour = NA) {
   element_rect(fill = fill, colour = colour)
 }
 
@@ -176,10 +184,8 @@ ucsc_rect <- function(fill = "transparent", colour = NA){
 #'   recommended that you install them on your system the same way you would any
 #'   other font you wish to use in other programs.
 #' @export
-import_roboto<- function() {
-
-  roboto_font_dir <- system.file("fonts", "roboto", package="ucscthemes")
-
+import_roboto <- function() {
+  roboto_font_dir <- system.file("fonts", "roboto", package = "ucscthemes")
 }
 
 
@@ -198,10 +204,8 @@ import_roboto<- function() {
 #'   recommended that you install them on your system the same way you would any
 #'   other font you wish to use in other programs.
 #' @export
-import_inter<- function() {
-
-  inter_font_dir <- system.file("fonts", "inter", package="ucscthemes")
-
+import_inter <- function() {
+  inter_font_dir <- system.file("fonts", "inter", package = "ucscthemes")
 }
 
 
@@ -215,15 +219,16 @@ import_inter<- function() {
 #' @param type body or title font type
 #'
 #' @export
-ucsc_font <- function(type = c("body", "title") ){
-
-  type <- match.arg(type,
-                    c("body", "title"))
+ucsc_font <- function(type = c("body", "title")) {
+  type <- match.arg(
+    type,
+    c("body", "title")
+  )
 
   switch(type,
-         "body" = font_inter,
-         "title" = font_robo)
-
+    "body" = font_inter,
+    "title" = font_robo
+  )
 }
 
 
@@ -244,5 +249,3 @@ font_robo <- "Roboto"
 #' @description `font_intr` == "`Inter`"
 #' @export
 font_inter <- "Inter"
-
-

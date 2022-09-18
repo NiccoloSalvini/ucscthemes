@@ -3,23 +3,26 @@
 # So that we can easily create new distill pages with ucsc themeing.
 # Lots of internal calling, just get it working for now
 create_ucsc_distill_website <- function(dir,
-                                       title,
-                                       gh_pages = FALSE,
-                                       edit = interactive()){
+                                        title,
+                                        gh_pages = FALSE,
+                                        edit = interactive()) {
   type <- "distill-ucsc-website"
-  tmp <- distill:::do_create_website(dir = dir,
-                                     title = title,
-                                     gh_pages = gh_pages,
-                                     type = "website",
-                                     edit = FALSE) # dont open before adapting files
+  tmp <- distill:::do_create_website(
+    dir = dir,
+    title = title,
+    gh_pages = gh_pages,
+    type = "website",
+    edit = FALSE
+  ) # dont open before adapting files
 
   # copy template files
-  theme_dir <- system.file(file.path("rstudio", "templates","project", type, "theme"),
-                           package = "ucscthemes")
+  theme_dir <- system.file(file.path("rstudio", "templates", "project", type, "theme"),
+    package = "ucscthemes"
+  )
   theme_files <- list.files(theme_dir)
-  k <- if(!dir.exists(file.path(dir, "theme"))) dir.create(file.path(dir, "theme"))
+  k <- if (!dir.exists(file.path(dir, "theme"))) dir.create(file.path(dir, "theme"))
 
-  k <- lapply(theme_files, function(x) file.copy(file.path(theme_dir, x), file.path(dir,"theme", x)))
+  k <- lapply(theme_files, function(x) file.copy(file.path(theme_dir, x), file.path(dir, "theme", x)))
 
   render_website_template <- function(file, data = list()) {
     ucscthemes_render_template(file, type = type, dir, data)
@@ -32,8 +35,9 @@ create_ucsc_distill_website <- function(dir,
   render_website_template("index.Rmd", data = list(title = title, gh_pages = gh_pages))
   render_website_template("about.Rmd")
 
-  if (edit)
+  if (edit) {
     distill:::edit_file(file.path(dir, "index.Rmd"))
+  }
 
   distill:::render_website(dir, type)
 }
@@ -42,16 +46,18 @@ create_ucsc_distill_website <- function(dir,
 new_project_create_website <- function(dir, ...) {
   params <- list(...)
   create_ucsc_distill_website(dir,
-                             params$title,
-                             params$gh_pages,
-                             edit = FALSE)
+    params$title,
+    params$gh_pages,
+    edit = FALSE
+  )
 }
 
 
 
 ucscthemes_render_template <- function(file, type, target_path, data = list()) {
   template <- system.file(file.path("rstudio", "templates", "project", type, file),
-                          package = "ucscthemes")
+    package = "ucscthemes"
+  )
   template <- paste(readLines(template, encoding = "UTF-8"), collapse = "\n")
   output <- whisker::whisker.render(template, data)
   writeLines(output, file.path(target_path, file), useBytes = TRUE)

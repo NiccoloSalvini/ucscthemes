@@ -1,0 +1,110 @@
+---
+title: "How to create a Cattolica course skeleton"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How to create a Cattolica course skeleton}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This is a walkthrough on how to generate and develop a Università Cattolica themed course skeleton with bootstrap and Bookdown. 
+
+The reasons why you would want it might include:
+
+- having materials hosted online
+- reuse or automate procedures which are shared across all of your courses, just like instructors and teaching assistant presentation, logistics, prerequisites, FAQs, examination procedures and modes.
+- concentrating on course materials instead of having to bother on css, palettes and other fancy staff.
+- having materials styled according to UCSC palette and tones
+- save course planning time having a minimal skeleton already set up and populated with basic information
+- relying on open source: take inspiration or be the inspiration for other young or senior lecturers
+
+You are going to open a new R session in a new directory with `New File > New Project > New Directory`, then load `ucscthemes` the package.
+
+```{r setup}
+library(ucscthemes)
+library(bookdown)
+library(here)
+```
+
+At this point execute the `create_bs4_ucsc_course` function specifying the `path` you expect the course skeleton to be in.  
+
+```{r create, eval=F}
+create_bs4_ucsc_course(path = here())
+```
+
+This will autopopulate the folder with these .Rmd files:
+
+```
+├── 01-prerequisites.Rmd
+├── 02-rpackages.Rmd
+├── 03-nicewarmup.Rmd 
+├── 04-syllabus.Rmd
+├── 98-faqs.Rmd
+├── 99-references.Rmd
+├── _bookdown.yml
+├── _common.R
+├── _output.yml
+├── book.bib
+├── chicago-fullnote-bibliography.csl
+├── images
+│  ├── andrew-tate.jpeg
+│  ├── cattolica-logo.png
+│  ├── cpt_1
+│  │  ├── 00_r_project_page.png
+│  │  ├── 00_rstudio_preferences_basic.png
+│  │  ├── 01_r_project_cran_mirror.png
+│  │  ├── 01_rstudio_main_page.png
+│  │  ├── 01_rstudio_preferences_editing.png
+│  │  ├── 02_r_project_os_choice.png
+│  │  ├── 02_rstudio_main_page_menu.png
+│  │  ├── 02_rstudio_preferences_display.png
+│  │  ├── 03_r_project_version_choice.png
+│  │  ├── 03_rstudio_preferences_appearance.png
+│  │  ├── 03_rstudio_select_version.png
+│  │  ├── 04_rstudio_select_edition.png
+│  │  └── 05_rstudio_download.png
+│  ├── cpt_3
+│  │  ├── 00_r_project_file_menu.png
+│  │  ├── 00_r_script.png
+│  │  ├── 01_r_project_new_directory.png
+│  │  ├── 02_r_project_new_project.png
+│  │  ├── 03_r_project_specs.png
+│  │  ├── 04_r_project_directory_name.png
+│  │  └── 05_r_project_new_session.png
+│  ├── fyi.png
+│  ├── hopr_aa01.png
+│  ├── Lightbulb2.png
+│  ├── Live-code.png
+│  ├── salvini.jpeg
+│  ├── tristan-tate.jpeg
+│  └── Your-turn.png
+├── index.Rmd
+├── index.yml
+├── preamble.tex
+├── prova.Rproj
+├── README.md
+└── style.css
+```
+
+Then execute `serve_book()`. This is going to compile the files together and generate a website.
+
+Please refer to [this tutorial](https://rfortherestofus.com/2022/04/bookdown/) to be able to understand how Bookdown compiles the files and generates a website.
+
+
+## Deploy on Netlify a.k.a. host in online
+
+Spin your Cattolica course on Netlify, the fastest way to build the fastest sites for the web. This is completely free up to a limit of n (this is changing now) websites. 
+
+Login in you [Netlify](https://app.netlify.com/drop) account and the click the `Add new site` button, then selet deploy manually. 
+
+drag and drop the folder containing the course skeleton in the panel then specify `_book` as the deployment folder.
+
+
+

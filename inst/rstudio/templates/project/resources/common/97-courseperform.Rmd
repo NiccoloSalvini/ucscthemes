@@ -1,0 +1,21 @@
+# ⚡ course performance
+
+In this place you can have a grasp on how your previous colleagues performed on past years in this course. Hopefully this will inspire you to do better and challenge your grade expectation.
+Data is extracted by [Blackboard](https://www.blackboard.com/it-it) and have been carefully anonymized and securely stored to preserve privacy.
+
+
+##  🎓 20-21 students 
+
+```{r, eval=F, echo=TRUE}
+knitr::include_graphics("images/<you course analysis>.png")
+```
+
+----
+
+```{r, eval=FALSE, echo=TRUE}
+knitr::include_graphics("images/<you course analysis>.png")
+```
+
+## 🎓  21-22 students
+
+... soon to be analysed ...
