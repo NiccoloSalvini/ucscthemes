@@ -1,4 +1,4 @@
-url: http://niccolosalvini.me/ucscthemes/
+url: niccolosalvini.me/ucscthemes/
 template:
   bootstrap: 5
   bootswatch: litera
@@ -15,5 +15,4 @@ template:
     structure:
       left:  [intro, reference, articles, tutorials, news]
       right: [search, github]
-
 
