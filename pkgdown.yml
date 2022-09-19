@@ -1,0 +1,10 @@
+pandoc: 2.14.2
+pkgdown: 2.0.6
+pkgdown_sha: ~
+articles:
+  how-to-create-course: how-to-create-course.html
+last_built: 2022-09-19T06:58Z
+urls:
+  reference: niccolosalvini.me/ucscthemes/reference
+  article: niccolosalvini.me/ucscthemes/articles
+
