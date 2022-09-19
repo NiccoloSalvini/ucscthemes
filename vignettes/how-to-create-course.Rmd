@@ -27,7 +27,7 @@ The reasons why you would want it might include:
 
 You are going to open a new R session in a new directory with `New File > New Project > New Directory`, then load `ucscthemes` the package.
 
-```{r setup}
+```{r setup, eval = F}
 library(ucscthemes)
 library(bookdown)
 library(here)
