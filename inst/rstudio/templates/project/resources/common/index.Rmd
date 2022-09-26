@@ -1,5 +1,5 @@
 --- 
-title: "A minimal ucsc course example"
+title: "A minimal ucsc course template"
 author: "Dr. John Doe"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -15,17 +15,18 @@ csl: chicago-fullnote-bibliography.csl
 
 # 🫶 About
 
-<img src="images/cattolica-logo.png" class= "cover" width="250" height="250"/> This is the official course website for _course_ for laboratories. bla bla bla bla bla bla bla bla bla bla bla bbla and bla!
+<img src="images/cattolica-logo.png" class= "cover" width="250" height="250"/> This is the official course website for _course_  @UCSC .
 
 
 
-## 🔧 Logistics
+## 🔧 Logistics {#logistics}
 - **Lectures**: Mon/Wed \*:\*\* - \*:\*\*pm CET. Class: 75% lectures, 25% tutorials.
 - **Location**: Zoom links can be found on Canvas
 - **Office hours**:
   - Arbia: Mon \*:\*\* - \*:\*\*pm CET
   - Gliozzi: Tue \*:\*\* - \*:\*\*am CET
   - Salvini: Wed \*:\*\* - \*:\*\*pm CET
+  
 - **Grading**:
 one final project to build an ML application (65%). We'll have a demo day to showcase all students' final projects. See last year projects here two to three fun, short assignments (30%) discussion participation in class + EdStem + OHs (5%)
   
@@ -33,7 +34,7 @@ one final project to build an ML application (65%). We'll have a demo day to sho
 
 - **Honor code**: Very important. See Honor Code \@ref(honorcode)
 
-## 👥 Team
+## 👥 Team {#team}
 
 ```{css, echo=FALSE}
 
@@ -98,93 +99,42 @@ one final project to build an ML application (65%). We'll have a demo day to sho
 ````
 
 
-## 🗒 labs' contents
+## 🗒 labs' contents {#labs-content}
 
 express course/labs content
 
 
-## 📚 Suggested reading list
+## 📚 Suggested reading list {#suggested-reading}
 
 I am going to split resources by the expected level of their audience: 
 
 ### Minimal or 0 knowledge of R
 
-- Everitt, B., Hothorn, T. (2011) An Introduction to Applied Multivariate Analysis with R, Springer-Verlag
 - James, G, Witten, D, Hastie, T and Tibshirani, R, (2015) An Introduction to Statistical Learning, with Applications in R
-- Zelterman, D. (2021) Applied Multivariate Statistics with R, Spinger-Verlag
 - Wickham, H., Grolemund G. (2018) R for Data Science, O’Reilly. Freely available  on-line at https://r4ds.had.co.nz/index.html
 - R for non-programmers, Daniel Dauber 2022, [free book](https://bookdown.org/daniel_dauber_io/r4np_book/starting-your-r-projects.html) 
 
 ### Advanced knowledge of R to become a top G
 
-- Reproducible Medical Research with R,Peter D.R. Higgins, MD, PhD, MSc, 2022, [free book](https://bookdown.org/pdr_higgins/rmrwr/)
-- Fundamentals of Wrangling Healthcare Data with R, J. Kyle Armstrong 2022, [free book](https://bookdown.org/jkylearmstrong/jeff_data_wrangling/) **Advanced**
+- Wickham H. (2015). Advanced r. CRC Press [free book](https://adv-r.hadley.nz/)
 
 
-
-## Honor Code {#honorcode}
+## 📜 Honor Code {#honorcode}
 Permissive but strict. If unsure, please ask the course staff!
 
-- OK to search, ask in public about the systems we’re studying. Cite all the resources you reference.
+- <span style="color: green;"><b>OK</b></span> to search, ask in public about the systems we’re studying. Cite all the resources you reference.
 E.g. if you read it in a paper, cite it. If you ask on Quora, include the link.
-- <span style="color: red;">NOT OKAY</span> to ask someone to do assignments/projects for you, we are monitoring freelancing websites, we have a plethora of bots doing this job daily.
-- <span style="color: green;">OK</span> to discuss questions with classmates. Disclose your discussion partners.
-- <span style="color: red;">NOT OKAY</span> to blindly copy solutions from classmates-
-- <span style="color: green;">OK</span>  to use existing solutions as part of your projects/assignments. Clarify your contributions.
-- <span style="color: red;">NOT OKAY</span>to pretend that someone’s solution is yours.
-- <span style="color: green;">OK</span>  to publish your final project after the course is over (we encourage that!)
-- <span style="color: red;">NOT OKAY</span> to post your assignment solutions online.
+- <span style="color: red;"><b>NOT OKAY</b></span> to ask someone to do assignments/projects for you, we are monitoring freelancing websites, we have a plethora of bots doing this job daily.
+- <span style="color: green;"><b>OK</b></span> to discuss questions with classmates. Disclose your discussion partners.
+- <span style="color: red;"><b>NOT OKAY</b></span> to blindly copy solutions from classmates.
+- <span style="color: green;"><b>OK</b></span> to use existing solutions as part of your projects/assignments. Clarify your contributions.
+- <span style="color: red;"><b>NOT OKAY</b></span> to pretend that someone’s solution is yours.
+- <span style="color: green;"><b>OK</b></span> to publish your final project after the course is over (we encourage that and if you need it I would love to help you!)
+- <span style="color: red;"><b>NOT OKAY</b></span> to post your assignment solutions online.
 
+## QR code
 
-## ♻️ Reproducibility _(for developers)_
-
-If you are willing to reproduce this book on your system please make sure to have installed `git`, `Rstudio` and relatively new version of R. Then follow the steps below.
-
-### Usage of this repo
-
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
-
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
-
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-### Render book
-
-clone the repo locally adn then access to the main directory.
-
-```
-git clone https://github.com/NiccoloSalvini/sbd_22-23.git
-```
-
-You can render the HTML version of this example book without changing anything:
-
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
-
-```{r, eval=FALSE}
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-### Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
-```
-
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+... insert code from [qr code generator](https://www.qrcode-monkey.com/?utm_source=google_c&utm_medium=cpc&utm_campaign=&utm_content=&utm_term=qr%20code%20generator_e)
 
 
 ## Colophon {#intro-colophon}

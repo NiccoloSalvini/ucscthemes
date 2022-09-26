@@ -6,7 +6,7 @@ Data is extracted by [Blackboard](https://www.blackboard.com/it-it) and have bee
 
 ##  🎓 20-21 students 
 
-```{r, eval=F, echo=TRUE}
+```{r, eval=FALSE, echo=TRUE}
 knitr::include_graphics("images/<you course analysis>.png")
 ```
 

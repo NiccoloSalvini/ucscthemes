@@ -10,6 +10,13 @@
 
 What the package does (one paragraph).
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{http://niccolosalvini.me/ucscthemes/}
+}
+
+}
 \author{
 \strong{Maintainer}: Niccolò Salvini \email{niccolo.salvini27@gmail.com}
 

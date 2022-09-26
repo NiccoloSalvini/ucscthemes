@@ -1,0 +1,90 @@
+# ✋ House to ask for  help!
+
+Number one rule when you are stuck is to go to google and directly copy and paste the error.
+
+This tutorial have taken heavy inspiration from the wonderful `reprex` [intro](https://www.tidyverse.org/help/) curated by th `{Tidyverse}` team. If you are looking for other walkthrough of the `reprex` packag [this resource](https://reprex.tidyverse.org/articles/magic-reprex.html) might fit you.
+
+> In space, no one can hear you scream.
+>
+> `r tufte::quote_footer('--- Alien (1979)')`
+
+Ease of use and acceptance are essential design criteria for the tidyverse's packages. If you're shaking your head in frustration, here's how you can assist us.
+
+## Make a reprex
+
+If you're stuck, the first step is to make a reprex, or repeatable/reproducible example. A reprex's purpose is to package your faulty code in such a way that others may execute it and feel your misery. Then, perhaps, they will be able to offer a remedy and put you out of your suffering.
+
+There are two parts to creating a reprex:
+
+- To begin, you must make your code replicable. This implies you must capture everything, including any library() calls and the creation of all essential objects. [The reprex package](#reprex-pkg) is the simplest approach to ensure you've done this.
+- Second, keep it as simple as possible. Remove anything that isn't directly linked to your situation. Typically, this entails generating a lot smaller and simpler R object than the one you're dealing with in real life, or even utilizing built-in data.
+
+That sounds like a lot of work! And it can be, but it has a great payoff:
+
+- Creating a good reprex shows the root of your problem 80% of the time. It's remarkable how frequently providing a self-contained and short example helps you to answer your own issue.
+
+- The other 20% of the time, you will have caught the core of the problem in a form that others can play with. This significantly increases your chances of receiving assistance!
+
+
+## Reprex package {#reprex-pkg}
+
+When constructing a reprex by hand, it's possible to overlook anything that prevents your code from running on someone else's computer. Use the reprex package to avoid this issue. It may be implemented as part of the tidyverse or separately. Do this only once.
+
+```{r reprexpkg, eval = FALSE}
+
+# pick ONE:
+# 
+# reprex is one of the (many) packages installed when you install tidyverse
+install.packages("tidyverse")
+
+# install reprex by itself
+install.packages("reprex")
+
+```
+
+When you want to make a reprex, you need to load the reprex package.
+
+```{r libreprex, eval=FALSE}
+library(reprex)
+```
+
+Write a bit of code and copy it to the clipboard:
+
+
+```{r copytotclip, eval=FALSE}
+(y <- 1:4)
+mean(y)
+```
+
+In the R Console, type reprex(). You'll see a preview of your rendered reprex in RStudio.
+
+```{r out}
+(y <- 1:4)
+#> [1] 1 2 3 4
+mean(y)
+#> [1] 2.5
+
+```
+
+It's now in your clipboard, ready for you to paste into, say, a GitHub issue. You can get reprex from the addins menu in RStudio, making it even easier to point out your code and choose the output type.
+
+![reprex addin](images/reprex-addins-menu.png)
+
+
+In either case, you may ultimately experiment with other capabilities like adding session information or structuring output as a commented R script. Reprex even uploads figures so you can simply ask ggplot2 queries. Some people load reprex upon startup so that it is always available.
+
+Running reprex() returns an error if your code is not self-contained. It may feel like harsh love, but you may get your narrative straight in private this way. The reprex format also strongly pushes you to choose the smallest dataset required to demonstrate your problem. Creating a successful reprex is a taught ability, and the instant feedback provided by reprex emphasizes this.
+
+## But Where to ask?
+
+You should post your reprex in a suitable topic now that you've created one that you can readily inflict on others. Here are several possibilities:
+
+- [community.rstudio.com](https://community.rstudio.com/): This is a friendly and inviting location to ask questions about the tidyverse (you can also ask questions about shiny and RStudio there!)
+
+- [Stack Overflow](https://stackoverflow.com/) You've definitely heard about Stack Overflow through googling: it's a popular source of solutions to coding-related problems. It might be frightening to ask a question on Stack Overflow, but if you've taken the time to develop a reprex, you're far more likely to get a relevant response. Make sure to tag your question with R and tidyverse so that it is seen by the relevant people.
+
+- [Twitter](https://twitter.com/home). It's difficult to share your reprex just on Twitter because 140 characters are rarely adequate and images don't let people to experiment with your code. However, Twitter is an excellent platform for sharing a link to your reprex that is hosted elsewhere. The #rstats twitter group is highly pleasant and active, and it is a fantastic community to be a part of. Make sure to include the hashtags #rstats and #tidyverse in your tweet.
+
+- If you think you’ve found a bug, please follow the instructions on [contributing to the tidyverse](https://www.tidyverse.org/contribute/#issues).
+
+
