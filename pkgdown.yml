@@ -3,8 +3,8 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   how-to-create-course: how-to-create-course.html
-last_built: 2022-09-19T06:58Z
+last_built: 2022-09-26T16:59Z
 urls:
-  reference: niccolosalvini.me/ucscthemes/reference
-  article: niccolosalvini.me/ucscthemes/articles
+  reference: https://www.niccolosalvini.me/ucscthemes/reference
+  article: https://www.niccolosalvini.me/ucscthemes/articles
 
