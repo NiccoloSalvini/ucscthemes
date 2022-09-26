@@ -30,6 +30,10 @@ goodpractice::gp()
 devtools::test()
 devtools::check()
 
+devtools::build_readme()
+devtools::build_vignettes()
+devtools::build_site()
+
 #'
 #' > Update the `NEWS.md` file
 #'
