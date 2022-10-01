@@ -8,53 +8,31 @@ This is the first edition of this course, well that's the first time I do it!
 
 to be ready: 
 
-```{css, echo = FALSE}
 
-.status-scheduled {
-  background: hsl(116, 60%, 90%);
-  color: hsl(116, 30%, 25%);
-}
+<insert Markdown table>
 
-.status-pending {
-  background: hsl(230, 70%, 90%);
-  color: hsl(230, 45%, 30%);
-}
+this is an example built with Google Sheet syllabus hosted on Drive plus [tabletomarkdown.com](https://tabletomarkdown.com/):
 
-.status-canceled {
-  background: hsl(350, 70%, 90%);
-  color: hsl(350, 45%, 30%);
-}
-```
+| Date        | Description                                                  | Materials                                                                    | Events           |
+| ----------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------- | ---------------- |
+| Mon Sept 26 | preliminaries, descriptive statistics and test of hypothesis | [slides](https://drive.google.com/open?id=1C8_10ZaVvqOKQ_Syu9xyQeENmiNasqV9) | Lecture          |
+| Fri Sept 30 | Intro to RStudio + One-Tailed Hypothesis Testing on a mean   | [slides](https://drive.google.com/open?id=1C8_10ZaVvqOKQ_Syu9xyQeENmiNasqV9) | Lecture + Coding |
+| Mon Oct 03  |                                                              |                                                                              | Lecture          |
+| Fri Oct 07  |                                                              |                                                                              | Lecture          |
+| Mon Oct 10  |                                                              |                                                                              | Lecture          |
+| Fri Oct 14  |                                                              |                                                                              | Lecture          |
+| Mon Oct 17  |                                                              |                                                                              | Lecture          |
+| Fri Oct 21  |                                                              |                                                                              | Lecture          |
+| Mon Oct 24  |                                                              |                                                                              | Lecture          |
+| Tue Oct 25  |                                                              |                                                                              | Laboratory       |
+| Fri Oct 28  |                                                              |                                                                              | Lecture          |
+| Mon Nov 07  |                                                              |                                                                              | Lecture          |
+| Tue Nov 08  |                                                              |                                                                              | Laboratory       |
+| Fri Nov 11  |                                                              |                                                                              | Lecture          |
+| Mon Nov 14  |                                                              |                                                                              | Lecture          |
+| Tue Nov 15  |                                                              |                                                                              | Laboratory       |
+| Fri Nov 18  |                                                              |                                                                              | Lecture          |
 
-
-
-```{r gentab, echo=FALSE, warning = FALSE, message = FALSE}
-library(reactable)
-library(googlesheets4)
-library(dplyr)
-
-syllabus <- read_sheet("https://docs.google.com/spreadsheets/d/1J4VAFUhskHjTXF_zJMgnPlMH9dr8vSXAt2K5lBi0vyg/edit?usp=sharing") %>% 
-  mutate(Status = "Scheduled")
-
-
-reactable(
-  syllabus,
-  sortable =TRUE,
-  columns = list(
-    # Or using raw HTML
-    Materials = colDef(html = TRUE, cell = function(value, index) {
-      sprintf('<a href="%s" target="_blank">%s</a>', syllabus$Links[index], value)
-    }), 
-    Status = colDef(cell = function(value) {
-      class <- paste0("tag status-", tolower(value))
-      htmltools::div(class = class, value)
-      }),
-    Links = colDef( show = F,)
-  )
-)
-
-
-```
 
 
 

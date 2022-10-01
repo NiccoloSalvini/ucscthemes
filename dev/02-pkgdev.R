@@ -30,6 +30,7 @@ goodpractice::gp()
 devtools::test()
 devtools::check()
 devtools::build()
+devtools::install()
 
 devtools::build_readme()
 devtools::build_vignettes()

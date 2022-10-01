@@ -1,16 +1,5 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
-```
 
 # ucscthemes <img src="man/figures/logo.png" align="right" height="139" />
 
@@ -24,8 +13,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 The goal of ucscthemes is to provide branded templates for the
-University of Cattolica for commonly used R markdown packages. Currently the
-package contains:
+University of Cattolica for commonly used R markdown packages. Currently
+the package contains:
 
 -   Presentation template for the
     [xaringan](https://slides.yihui.org/xaringan/#1)-package  
@@ -104,13 +93,12 @@ ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
 
 <img src="man/figures/README-unnamed-chunk-6-2.png" width="100%" />
 
-
 ## ucsc course skeleton
 
-This package also offers a way to set up a minimal skeleton infrastructure to reproduce materials for a general course with [bs4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) and [Bookdown](https://bookdown.org/) ... [an example of a course built with this package](https://sbd-labs-22-23.netlify.app/).
+This package also offers a way to set up a minimal skeleton
+infrastructure to reproduce materials for a general course with
+[bs4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+and [Bookdown](https://bookdown.org/) … [an example of a course built
+with this package](https://sbd-labs-22-23.netlify.app/).
 
 The function `create_course` generates this structure:
-
-
-
-

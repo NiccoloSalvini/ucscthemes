@@ -12,12 +12,12 @@ Imports:
     fs,
     ggplot2,
     grDevices,
+    knitr,
     learnr,
     rstudioapi,
     xaringan,
     xfun
 Suggests: 
-    knitr,
     rmarkdown,
     spelling,
     testthat (>= 3.0.0)
