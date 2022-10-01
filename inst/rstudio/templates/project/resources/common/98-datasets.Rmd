@@ -1,0 +1,9 @@
+# Datasets {#appendixdatasets}
+
+The following data sets are available for download.
+
+Data sets                  |  Example reference              |      `csv` format
+:--------------------------+:--------------------------------+-----------------------+-------------------------------:
+B12                        | Sect. \@ref(B12Deficiency)      | [B12-Long.csv](./data/B12-Long.sav)
+Baby boom                  | Sect. \@ref(StemAndLeafPlots)   |  [BabyBoom.csv](./data/BabyBoom.csv)
+

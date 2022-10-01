@@ -1,9 +1,60 @@
 # 🗒️ Syllabus
 
-The lecture slides, notes, tutorials, and assignments will be posted online in advance, feel free to jump on it, but please do not anticipate questions in class. instead [drop me a mail](mailto:niccolo.salvini27@gmail.com) ig you are not sure about something.
-
-Lecture times are \*\*:\*\* pm/am - \*\*:\*\*pm/am CET. All deadlines are at 11:59pm CET.
+The lecture slides, notes, tutorials, and assignments will be posted on [this drive](https://drive.google.com/drive/u/0/folders/1fkQICU1yBzqeIOT2grTeTpuRno1mHIDs), feel free to jump on it, but please do not anticipate questions in class, instead [drop me a mail](mailto:niccolo.salvini27@gmail.com) if you are not sure about something. If for any reasons you have trouble accessing the G Drive please contact [your teaching assistant](mailto:niccolo.salvini27@gmail.com)
 
 This schedule is subject to change according to the pace of the class.
 
 This is the first edition of this course, well that's the first time I do it!
+
+to be ready: 
+
+```{css, echo = FALSE}
+
+.status-scheduled {
+  background: hsl(116, 60%, 90%);
+  color: hsl(116, 30%, 25%);
+}
+
+.status-pending {
+  background: hsl(230, 70%, 90%);
+  color: hsl(230, 45%, 30%);
+}
+
+.status-canceled {
+  background: hsl(350, 70%, 90%);
+  color: hsl(350, 45%, 30%);
+}
+```
+
+
+
+```{r gentab, echo=FALSE, warning = FALSE, message = FALSE}
+library(reactable)
+library(googlesheets4)
+library(dplyr)
+
+syllabus <- read_sheet("https://docs.google.com/spreadsheets/d/1J4VAFUhskHjTXF_zJMgnPlMH9dr8vSXAt2K5lBi0vyg/edit?usp=sharing") %>% 
+  mutate(Status = "Scheduled")
+
+
+reactable(
+  syllabus,
+  sortable =TRUE,
+  columns = list(
+    # Or using raw HTML
+    Materials = colDef(html = TRUE, cell = function(value, index) {
+      sprintf('<a href="%s" target="_blank">%s</a>', syllabus$Links[index], value)
+    }), 
+    Status = colDef(cell = function(value) {
+      class <- paste0("tag status-", tolower(value))
+      htmltools::div(class = class, value)
+      }),
+    Links = colDef( show = F,)
+  )
+)
+
+
+```
+
+
+
