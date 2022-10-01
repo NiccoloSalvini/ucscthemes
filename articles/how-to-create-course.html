@@ -102,20 +102,40 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/create_course.html">create_bs4_ucsc_course</a></span><span class="op">(</span>path <span class="op">=</span> <span class="fu">here</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>This will autopopulate the folder with these .Rmd files:</p>
-<pre><code>├── 01-prerequisites.Rmd
+<pre><code>.
+├── 01-prerequisites.Rmd
 ├── 02-rpackages.Rmd
-├── 03-nicewarmup.Rmd 
+├── 03-nicewarmup.Rmd
 ├── 04-syllabus.Rmd
-├── 98-faqs.Rmd
+├── 05-lab-hypt-testing.Rmd
+├── 06-lab-linearreg.Rmd
+├── 07-lab-logisticregr.Rmd
+├── 08-lab-survanalysis.Rmd
+├── 93-answers-to-end-of-chapter-exercises.Rmd
+├── 94-courseperformance.Rmd
+├── 95-askforhelp.Rmd
+├── 96-faqs.Rmd
+├── 97-symbols-formulas-statistics-parameters.Rmd
+├── 98-datasets.Rmd
 ├── 99-references.Rmd
 ├── _bookdown.yml
 ├── _common.R
 ├── _output.yml
 ├── book.bib
 ├── chicago-fullnote-bibliography.csl
+├── data
+│  ├── coronary.dta
+│  ├── stroke.dta
+│  └── stroke_data.csv
+├── html
+│  └── favicon.html
 ├── images
-│  ├── andrew-tate.jpeg
+│  ├── arbia.jpeg
+│  ├── BodyTempTtest-spss.png
+│  ├── BodyTempTtest.png
+│  ├── cattolica-logo-favicon.png
 │  ├── cattolica-logo.png
+│  ├── CherryRipes20172018.png
 │  ├── cpt_1
 │  │  ├── 00_r_project_page.png
 │  │  ├── 00_rstudio_preferences_basic.png
@@ -138,20 +158,41 @@
 │  │  ├── 03_r_project_specs.png
 │  │  ├── 04_r_project_directory_name.png
 │  │  └── 05_r_project_new_session.png
+│  ├── cpt_4
+│  │  ├── 01_files_pane_import.png
+│  │  ├── 02_files_pane_import.png
+│  │  ├── 03_files_pane_import.png
+│  │  ├── 04_files_pane_import.png
+│  │  └── skimr_output.png
 │  ├── fyi.png
+│  ├── fyi copy.png
 │  ├── hopr_aa01.png
 │  ├── Lightbulb2.png
 │  ├── Live-code.png
+│  ├── perf_20-21.png
+│  ├── perf_mg_20-21.png
+│  ├── pexels-anna-shvets-3987141.jpeg
+│  ├── qr-code.png
+│  ├── RecoveryTimeOneSampleTOutput.png
+│  ├── RecoveryTimeTTest.png
+│  ├── reprex-addins-menu.png
 │  ├── salvini.jpeg
-│  ├── tristan-tate.jpeg
-│  └── Your-turn.png
+│  ├── WomenEnergyOutput.png
+│  ├── Your-turn.png
+│  └── zelterman.jpeg
 ├── index.Rmd
-├── index.yml
-├── preamble.tex
-├── prova.Rproj
+├── live-coding-sessions
+│  └── ex_data_wrangling.Rmd
+├── Makefile
+├── packages.bib
 ├── README.md
+├── sbd_22-23.rds
+├── sbd_22-23.Rproj
+├── scripts
+│  ├── calendar.R
+│  └── exam_performance.R
 └── style.css</code></pre>
-<p>Then execute <code><a href="https://pkgs.rstudio.com/bookdown/reference/serve_book.html" class="external-link">serve_book()</a></code>. This is going to compile the files together and generate a website.</p>
+<p>Then execute <code><a href="https://pkgs.rstudio.com/bookdown/reference/serve_book.html" class="external-link">serve_book()</a></code>. This is going to compile the files and generate a website. From now on every time you save a file the book will recompile itself. If you don’t like this behaviour just restart the R Session.</p>
 <p>Please refer to <a href="https://rfortherestofus.com/2022/04/bookdown/" class="external-link">this tutorial</a> to be able to understand how Bookdown compiles the files and generates a website.</p>
 <div class="section level2">
 <h2 id="deploy-on-netlify-a-k-a--host-in-online">Deploy on Netlify a.k.a. host in online<a class="anchor" aria-label="anchor" href="#deploy-on-netlify-a-k-a--host-in-online"></a>
