@@ -62,3 +62,11 @@ div.note {
     border-radius: 140px;
     margin-bottom: 10px;
 }
+
+.answer{
+  background-color: rgb(255, 255, 255);
+  padding: 1em 1em 1em 0; /* top right bottom left */
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+

@@ -1,0 +1,72 @@
+# (PART\*) Laboratories {.unnumbered}
+
+
+# 💻 Hypothesis Testing {#hypt-test}
+
+
+
+
+
+## Exercises {#TestOneMeanAnswerExercises}
+
+Selected answers are available in
+Sect. \@ref(TestOneMeanAnswer).
+
+
+```{r echo=FALSE, message=FALSE}
+# WE <- read.spss("../Data/WomenEnergy.sav", to.data.frame=TRUE)
+
+WE <- structure(list(Energy = c(5260, 5470, 5640, 6180, 6390, 7515, 
+6515, 6805, 7515, 8230, 8770)), .Names = "Energy", row.names = c(NA, 
+-11L), class = "data.frame", variable.labels = structure(character(0), .Names = character(0)), codepage = 28591L)
+
+```
+
+
+::: {.exercise #TestOneMeanExercisesEnergyIntake}
+The recommended daily energy intake for women
+is 7725kJ
+(for a particular cohort, in a particular country;
+@data:Altman1991:PracticalStats).
+The daily energy intake for 11 women was measured
+to see if this is being adhered to.
+The RQ is
+
+> For this group of women, is the population mean daily energy intake 7725kJ?
+
+The data collected are shown in
+Table \@ref(tab:WomenEnergyData).
+
+1. Write the hypotheses for answering this RQ.
+1. Use the jamovi output 
+   (Fig. \@ref(fig:WomenEnergyDescriptivesjamovi)),
+   write down the value of 
+   $\bar{x}$ and $\text{s.e.}(\bar{x})$.
+1. Using this output, write down the $t$-value and the $P$-value.
+1. Write a suitable conclusion.
+1. Is the test statistically valid?
+1. Sketch the sampling distribution of $\bar{x}$.
+
+:::
+
+
+
+```{r WomenEnergyData, echo=FALSE}
+WEArray <- array( c(WE$Energy, NA),  dim=c(2, 6))
+if( knitr::is_latex_output() ) {
+  kable(WEArray,
+        format = "latex",
+        col.names = rep(" ", 6),
+        booktabs = TRUE,
+        caption = "Energy consumptions (in kJ) for women")
+}
+if( knitr::is_html_output() ) {
+  kable(WEArray,
+        format = "html",
+        booktabs = TRUE,
+        longtable = FALSE,
+        col.names = rep(" ", 6),
+        booktabs = TRUE,
+        caption = "Energy consumptions (in kJ) for women")
+}
+```

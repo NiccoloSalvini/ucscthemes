@@ -1,5 +1,10 @@
 bookdown::bs4_book:
   css: style.css
   theme:
-    primary: "#002f56"
-  repo: https://github.com/rstudio/bookdown-demo
+    primary: "#002f57"
+    secondary: "#125ea0"
+    heading_font: "'Raleway', sans-serif"
+  repo: www.github.com/username/repo
+  includes:
+    in_header:
+    - html/favicon.html

@@ -7,3 +7,5 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   out.width="100%"
 )
+
+

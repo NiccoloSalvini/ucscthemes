@@ -6,6 +6,9 @@
 
 This is the official repository containing the lab course materials for Statistics & Big Data. This course skeleton ig generated throughthe package `ucscthemes` with R Markdown and **bookdown** (https://github.com/rstudio/bookdown) styled with bs4. If you are willing to reproduce a course though this template please follow [this vignette](https://ucscthemes.netlify.app/articles/how-to-create-course.html).
 
+## 🧪 Exercies 
+
+interactive exercies are built with [learningapps.org](learningapps.org).
 
 ## ♻️ Reproducibility _(for developers)_
 

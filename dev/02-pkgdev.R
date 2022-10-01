@@ -29,6 +29,7 @@ goodpractice::gp()
 # (and running them in a non-interactive session)
 devtools::test()
 devtools::check()
+devtools::build()
 
 devtools::build_readme()
 devtools::build_vignettes()
