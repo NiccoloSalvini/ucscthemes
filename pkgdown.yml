@@ -3,7 +3,7 @@ pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   how-to-create-course: how-to-create-course.html
-last_built: 2023-06-06T16:40Z
+last_built: 2023-06-06T17:50Z
 urls:
   reference: https://ucscthemes.netlify.app/index.html/reference
   article: https://ucscthemes.netlify.app/index.html/articles
