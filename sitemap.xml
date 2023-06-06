@@ -1,57 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/404.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/404.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/CODE_OF_CONDUCT.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/LICENSE.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/articles/how-to-create-course.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/articles/how-to-create-course.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/articles/index.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/authors.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/authors.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/index.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/index.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/news/index.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/news/index.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/reference/create_course.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/Inter.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/reference/import_inter.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/Roboto.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/reference/import_roboto.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/create_bs4_ucsc_course.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/reference/index.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/create_ucsc_distill_website.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/reference/scales_ucsc.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/import_inter.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/reference/themes_ucsc.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/import_roboto.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/reference/ucsc_cols.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/reference/ucsc_font.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/scales_ucsc.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/reference/ucsc_pal.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/themes_ucsc.html</loc>
   </url>
   <url>
-    <loc>https://www.niccolosalvini.me/ucscthemes/reference/ucscthemes-package.html</loc>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/ucsc_cols.html</loc>
+  </url>
+  <url>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/ucsc_font.html</loc>
+  </url>
+  <url>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/ucsc_pal.html</loc>
+  </url>
+  <url>
+    <loc>https://ucscthemes.netlify.app/index.html/reference/ucscthemes-package.html</loc>
   </url>
 </urlset>
