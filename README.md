@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8011290.svg)](https://doi.org/10.5281/zenodo.8011290)
+
 [![CRAN
 status](https://www.r-pkg.org/badges/version/ucscthemes)](https://CRAN.R-project.org/package=ucscthemes)
 [![Lifecycle:
