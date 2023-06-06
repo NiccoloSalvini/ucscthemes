@@ -1,5 +1,4 @@
-# thx bookdown package
-# this is the function used for the RStudio project template
+#' @keywords internal
 bookdown_skeleton <- function(path, output_format = skeleton_formats()) {
   output_format <- match.arg(output_format)
   # ensure directory exists
@@ -36,6 +35,7 @@ bookdown_skeleton <- function(path, output_format = skeleton_formats()) {
   invisible(TRUE)
 }
 
+#' @keywords internal
 skeleton_remove_blocks <- function(path, output_format) {
   rmd_files <- list.files(path, "[.]Rmd$", recursive = TRUE, full.names = TRUE)
   unkept_format <- setdiff(skeleton_formats(), output_format)
@@ -64,10 +64,12 @@ skeleton_remove_blocks <- function(path, output_format) {
   invisible(TRUE)
 }
 
+#' @keywords internal
 skeleton_formats <- function() {
   c("gitbook", "bs4_book")
 }
 
+#' @keywords internal
 skeleton_insert_yml <- function(index_rmd, index_yml, placeholder) {
   index <- xfun::read_utf8(index_rmd)
   pos <- grep(placeholder, index, fixed = FALSE)
@@ -83,12 +85,14 @@ skeleton_insert_yml <- function(index_rmd, index_yml, placeholder) {
   invisible(TRUE)
 }
 
+#' @keywords internal
 skeleton_build_index <- function(path, format_dir) {
   index_file <- file.path(path, "index.Rmd")
   index_format_yml <- file.path(path, format_dir, "index.yml")
   skeleton_insert_yml(index_file, index_format_yml, "# additional yaml goes here")
 }
 
+#' @keywords internal
 skeleton_append_yml <- function(main_yml, child_yml, prepend = NULL) {
   yml_main <- xfun::read_utf8(main_yml)
   if (!file.exists(child_yml)) {
@@ -102,8 +106,7 @@ skeleton_append_yml <- function(main_yml, child_yml, prepend = NULL) {
 }
 
 
-# file.rename() does not work if target directory is not empty, so we just copy
-# everything from `from` to `to`, and delete `from`
+#' @keywords internal
 move_dir <- function(from, to) {
   if (!fs::dir_exists(to)) {
     return(file.rename(from, to))
@@ -117,29 +120,34 @@ move_dir <- function(from, to) {
   invisible(TRUE)
 }
 
+#' @keywords internal
 copy_dir <- function(from, to) {
   if (!fs::dir_exists(to)) dir.create(to)
   file.copy(list.files(from, full.names = TRUE), to, recursive = TRUE)
   invisible(TRUE)
 }
 
+#' @keywords internal
 move_dirs <- function(from, to) mapply(move_dir, from, to)
 
+#' @keywords internal
 copy_dirs <- function(from, to) mapply(copy_dir, from, to)
 
+#' @keywords internal
 skeleton_get_images <- function(path) {
   dir_name <- "images"
   dir_path <- file.path(path, dir_name)
   copy_dir(skeleton_get_dir(dir_name), dir_path)
 }
 
-
+#' @keywords internal
 skeleton_get_images_chapters <- function(path) {
   dir_name_cpts <- paste0("images/", c("cpt_1", "cpt_3"))
   dir_paths <- file.path(path, dir_name_cpts)
   copy_dirs(skeleton_get_dir(dir_name_cpts), dir_paths)
 }
 
+#' @keywords internal
 skeleton_build_output_yml <- function(path, format_dir) {
   file <- "_output.yml"
   main_file <- file.path(path, file)
@@ -182,29 +190,35 @@ activate_rstudio_project <- function(dir) {
   }
 }
 
-#' Create a bs4 bookdown project for UCSC course
+
+#' @title Create a bs4 bookdown project for UCSC course
 #'
-#' Create a bookdown project with multiple book output formats,
-#' including HTML. Choose one of two HTML book output formats:
+#' @description
+#'  Create a bookdown project with multiple book output formats,
+#'  including HTML.
 #'
-#' * Use `create_bs4_ucsc_course()` to use a `bookdown::bs4_book()` output format for course docs
+#'   * Use `create_bs4_ucsc_course()` to use a `bookdown::bs4_book()` output format for course docs
 #'
 #' The function will create a folder with file structure for a bookdown project,
 #' and example files with information on how to start.
 #'
 #' @param path Absolute path to an empty directory in which to create the bookdown project.
-#'   In the RStudio IDE, if \pkg{rstudioapi} package available,
-#'   an RStudio project will be created.
-#' @name create_book
-#' @md
-
-#' @rdname create_course
+#'      In the RStudio IDE, if \pkg{rstudioapi} package available, an RStudio project will be created.
+#' @examples
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @rdname create_bs4_ucsc_course
 #' @export
 create_bs4_ucsc_course <- function(path) {
   bookdown_skeleton(path, output_format = "bs4_book")
   activate_rstudio_project(path)
   message("👍 the course template is located at:", path)
 }
+
+
 
 # Trying download because in case of offline usage we still want the skeleton
 # project to be created without error

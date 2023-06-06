@@ -1,6 +1,6 @@
-
-#' Colour and fill scale constructors for ucsc colors
+#' @title Colour and fill scale constructors for ucsc colors
 #'
+#' @description
 #' These scale functions help alter ggplot2 colour and fill
 #' to colours in the ucsc branding scheme.
 #' See the colour palettes in \code{\link{ucsc_pal}} for

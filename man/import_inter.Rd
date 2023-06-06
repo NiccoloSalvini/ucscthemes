@@ -21,3 +21,4 @@ font directory is displayed after the base import is complete. It is highly
 recommended that you install them on your system the same way you would any
 other font you wish to use in other programs.
 }
+\keyword{internal}

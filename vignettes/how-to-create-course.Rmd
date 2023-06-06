@@ -1,5 +1,5 @@
 ---
-title: "How to create a Cattolica course skeleton"
+title: "How to create a bs4 Cattolica course as a Teaching Assistant"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{How to create a Cattolica course skeleton}
@@ -14,16 +14,16 @@ knitr::opts_chunk$set(
 )
 ```
 
-This is a walkthrough on how to generate and develop a Università Cattolica themed course skeleton with bootstrap and Bookdown. 
+In this tutorial, you will learn how to use the `create_bs4_ucsc_course()` function in the R package `ucscthemes` to create a course skeleton that is themed with the colors and styles of Università Cattolica. The benefits of using this function include:
 
-The reasons why you would want it might include:
+- Hosting course materials online for easy accessibility.
+- Automating shared procedures across multiple courses such as the presentation of course materials, logistics, prerequisites, FAQs, examination procedures and modes.
+- Saving time by focusing on course materials rather than worrying about CSS and other design elements.
+- Aesthetic consistency with the UCSC palette and style.
+- Quick and easy course planning with a pre-populated skeleton.
+- Contribution to the open-source community by sharing or gaining inspiration for teaching materials and design.
 
-- having materials hosted online
-- reuse or automate procedures which are shared across all of your courses, just like instructors and teaching assistant presentation, logistics, prerequisites, FAQs, examination procedures and modes.
-- concentrating on course materials instead of having to bother on css, palettes and other fancy staff.
-- having materials styled according to UCSC palette and tones
-- save course planning time having a minimal skeleton already set up and populated with basic information
-- relying on open source: take inspiration or be the inspiration for other young or senior lecturers
+## Jumpstart!
 
 You are going to open a new R session in a new directory with `New File > New Project > New Directory`, then load `ucscthemes` the package.
 

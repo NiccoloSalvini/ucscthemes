@@ -41,7 +41,6 @@ devtools::build_site()
 #'
 usethis::use_version()
 
-
 #'
 #' CRAN submission's cycle
 #' ====================================================================

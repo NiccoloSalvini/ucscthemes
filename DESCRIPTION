@@ -1,11 +1,11 @@
 Package: ucscthemes
-Title: What the Package Does (One Line, Title Case)
+Title: Rmarkdown templates for UCSC
 Version: 1.1.0
 Authors@R: 
     person("Niccolò", "Salvini", , "niccolo.salvini27@gmail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: A set of wrappers to quickly start up website, slides and materials branded UCSC
 License: GPL (>= 3)
-URL: http://niccolosalvini.me/ucscthemes/
+URL: https://ucscthemes.netlify.app/index.html, https://github.com/NiccoloSalvini/ucscthemes
 Imports: 
     bookdown,
     distill,

@@ -183,7 +183,7 @@ ucsc_rect <- function(fill = "transparent", colour = NA) {
 #'   font directory is displayed after the base import is complete. It is highly
 #'   recommended that you install them on your system the same way you would any
 #'   other font you wish to use in other programs.
-#' @export
+#' @keywords internal
 import_roboto <- function() {
   roboto_font_dir <- system.file("fonts", "roboto", package = "ucscthemes")
 }
@@ -203,7 +203,8 @@ import_roboto <- function() {
 #'   font directory is displayed after the base import is complete. It is highly
 #'   recommended that you install them on your system the same way you would any
 #'   other font you wish to use in other programs.
-#' @export
+#'
+#' @keywords internal
 import_inter <- function() {
   inter_font_dir <- system.file("fonts", "inter", package = "ucscthemes")
 }
@@ -217,8 +218,7 @@ import_inter <- function() {
 #' ggplot2-theme functions.
 #'
 #' @param type body or title font type
-#'
-#' @export
+#' @keywords internal
 ucsc_font <- function(type = c("body", "title")) {
   type <- match.arg(
     type,
@@ -231,21 +231,21 @@ ucsc_font <- function(type = c("body", "title")) {
   )
 }
 
-
-## diff fonts NA
+#' @title Roboto font declaration (Primary)
 #' @rdname Roboto
 #' @md
 #' @note `font_rob` (a.k.a. "`Roboto`") is not available on
 #'     Windows and will throw a warning if used in plots.
 #' @description `font_robo_` == "`Roboto `"
-#' @export
+#' @keywords internal
 font_robo <- "Roboto"
 
 
+#' @title Inter font declaration (Secondary)
 #' @rdname Inter
 #' @md
 #' @note `font_intr` (a.k.a. "`Inter`") is not available on
 #'     Windows and will throw a warning if used in plots.
 #' @description `font_intr` == "`Inter`"
-#' @export
+#' @keywords internal
 font_inter <- "Inter"

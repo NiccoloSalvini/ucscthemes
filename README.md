@@ -16,27 +16,26 @@ The goal of ucscthemes is to provide branded templates for the
 University of Cattolica for commonly used R markdown packages. Currently
 the package contains:
 
--   Presentation template for the
-    [xaringan](https://slides.yihui.org/xaringan/#1)-package  
--   Tutorial template for the
-    [learnr](https://rstudio.github.io/learnr/)-package  
--   Website template for the
-    [distill](https://rstudio.github.io/distill/website.html)-package  
--   Article template for the
-    [distill](https://rstudio.github.io/distill/basics.html)-package  
--   Themes for the [ggplot2](https://ggplot2.tidyverse.org/)-package  
--   Colour and fill scales for the
-    [ggplot2](https://ggplot2.tidyverse.org/)-package
--   Course themed skeleton creation based on
-    [bs4](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html)
+- Article template for the
+  [distill](https://rstudio.github.io/distill/basics.html)-package  
+- Themes for the [ggplot2](https://ggplot2.tidyverse.org/)-package  
+- Colour and fill scales for the
+  [ggplot2](https://ggplot2.tidyverse.org/)-package
+- Course themed skeleton creation based on
+  [bs4](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html)
+- Presentation template for the
+  [xaringan](https://slides.yihui.org/xaringan/#1)-package 🔜
+- Tutorial template for the
+  [learnr](https://rstudio.github.io/learnr/)-package 🔜
+- Website template for the
+  [distill](https://rstudio.github.io/distill/website.html)-package 🔜
 
 ## Installation
 
-You can install ucscthemes from github
+You can install `ucscthemes` from github:
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("NiccoloSalvini/ucscthemes")
+devtools::install_github("NiccoloSalvini/ucscthemes")
 ```
 
 <!-- You can install the released version of ucscthemes from [CRAN](https://CRAN.R-project.org) with: -->
@@ -81,8 +80,6 @@ ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ``` r
-  
-
 ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
   geom_point(size = 5) +
   scale_colour_ucsc(palette = "bw", discrete = FALSE) +
@@ -93,7 +90,7 @@ ggplot(mtcars, aes(mpg, disp, colour = cyl)) +
 
 <img src="man/figures/README-unnamed-chunk-6-2.png" width="100%" />
 
-## ucsc course skeleton
+## ucsc bs4 course skeleton
 
 This package also offers a way to set up a minimal skeleton
 infrastructure to reproduce materials for a general course with
@@ -101,4 +98,4 @@ infrastructure to reproduce materials for a general course with
 and [Bookdown](https://bookdown.org/) … [an example of a course built
 with this package](https://sbd-labs-22-23.netlify.app/).
 
-The function `create_course` generates this structure:
+The function `create_course` generates the following structure:

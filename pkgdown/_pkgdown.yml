@@ -1,0 +1,42 @@
+url: https://ucscthemes.netlify.app/index.html
+template:
+  bootstrap: 5
+  bootswatch: litera
+  lang: en
+  bslib:
+    pkgdown-nav-height: 100px
+    bg: "#FEFEFE"
+    fg: "#022647"
+    border-radius: 0.5rem
+    btn-border-radius: 0.40rem
+    primary: "#022647"
+    base_font: {google: "Inter"}
+    heading_font: {google: "Roboto Slab"}
+    code_font: {google: "JetBrains Mono"}
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, tutorials, news]
+    right: [search, github]
+
+reference:
+  - title: "Create a UCSC bs4 flavoured themed template"
+    desc: "Automagically generate skelethon files and styles for you"
+    contents:
+    - create_bs4_ucsc_course
+
+  - title: "Style your ggplot graphs, but in a Cattolica waaay"
+    desc: "Bring to your plots a little bit of magic and style"
+    contents:
+    - theme_ucsc
+    - theme_ucsc_dark
+    - theme_ucsc_dark_void
+    - theme_ucsc_void
+    - scale_fill_ucsc
+    - scale_color_ucsc
+    - scale_colour_ucsc
+
+  - title: "Generate Distill website, with Cattolica topping"
+    desc: "Distill website are fun. Have you ever seen the UCSC ones?"
+    contents:
+    - create_ucsc_distill_website

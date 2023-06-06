@@ -1,18 +1,31 @@
-
-# adapted from https://github.com/rstudio/distill/blob/master/R/create.R
-# So that we can easily create new distill pages with ucsc themeing.
-# Lots of internal calling, just get it working for now
+#' @title Create a distill fashion course themed for UCSC
+#' @description can easily create new distill website with USCS themeing.
+#' @param dir absolute path
+#' @param title website title
+#' @param gh_pages are you going to use GH pages?, Default: FALSE
+#' @param edit interactively decide index.Rmc, Default: interactive()
+#' @examples
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @seealso
+#'  \code{\link[distill]{character(0)}}
+#' @rdname create_ucsc_distill_website
+#' @export
+#' @importFrom distill create_website
 create_ucsc_distill_website <- function(dir,
                                         title,
                                         gh_pages = FALSE,
                                         edit = interactive()) {
   type <- "distill-ucsc-website"
-  tmp <- distill:::do_create_website(
+  tmp <- distill::create_website(
     dir = dir,
     title = title,
     gh_pages = gh_pages,
     type = "website",
-    edit = FALSE
+    edit = edit
   ) # dont open before adapting files
 
   # copy template files
@@ -35,14 +48,10 @@ create_ucsc_distill_website <- function(dir,
   render_website_template("index.Rmd", data = list(title = title, gh_pages = gh_pages))
   render_website_template("about.Rmd")
 
-  if (edit) {
-    distill:::edit_file(file.path(dir, "index.Rmd"))
-  }
-
-  distill:::render_website(dir, type)
+  distill::distill_website(dir)
 }
 
-
+#' @keywords internal
 new_project_create_website <- function(dir, ...) {
   params <- list(...)
   create_ucsc_distill_website(dir,
@@ -53,7 +62,7 @@ new_project_create_website <- function(dir, ...) {
 }
 
 
-
+#' @keywords internal
 ucscthemes_render_template <- function(file, type, target_path, data = list()) {
   template <- system.file(file.path("rstudio", "templates", "project", type, file),
     package = "ucscthemes"

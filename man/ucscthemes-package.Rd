@@ -4,16 +4,17 @@
 \name{ucscthemes-package}
 \alias{ucscthemes}
 \alias{ucscthemes-package}
-\title{ucscthemes: What the Package Does (One Line, Title Case)}
+\title{ucscthemes: Rmarkdown templates for UCSC}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-What the package does (one paragraph).
+A set of wrappers to quickly start up website, slides and materials branded UCSC
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{http://niccolosalvini.me/ucscthemes/}
+  \item \url{https://ucscthemes.netlify.app/index.html}
+  \item \url{https://github.com/NiccoloSalvini/ucscthemes}
 }
 
 }

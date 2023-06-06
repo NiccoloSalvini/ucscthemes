@@ -1,3 +1,4 @@
+#' @keywords  internal
 ucsc_colors <- c(
   blue = "#003157",
   white = "#fffeff",
@@ -25,6 +26,7 @@ ucsc_cols <- function(...) {
   ucsc_colors[cols]
 }
 
+#' @keywords  internal
 ucsc_palettes <- list(
   `main` = ucsc_cols("darkblue", "blue", "white"),
   `bw` = ucsc_cols("darkblue", "white"),

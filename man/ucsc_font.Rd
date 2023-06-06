@@ -14,3 +14,4 @@ Returns family name of ucsc fonts, to
 be used in plots. If for instance used the the
 ggplot2-theme functions.
 }
+\keyword{internal}
