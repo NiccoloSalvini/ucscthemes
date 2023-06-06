@@ -35,6 +35,8 @@ reference:
     - scale_fill_ucsc
     - scale_color_ucsc
     - scale_colour_ucsc
+    - ucsc_pal
+    - ucsc_cols
 
   - title: "Generate Distill website, with Cattolica topping"
     desc: "Distill website are fun. Have you ever seen the UCSC ones?"
